@@ -46,16 +46,10 @@ function copiarSenha() {
     return;
   }
 
-  campoSenha.type = "text"; 
   campoSenha.select();
-  campoSenha.setSelectionRange(0, 99999); 
-
-  navigator.clipboard.writeText(campoSenha.value)
-    .then(() => {
-      alert("Senha copiada para a área de transferência!");
-      campoSenha.type = "password"; // Volta pra pontinhos
-    })
-    .catch(err => {
-      alert("Erro ao copiar: " + err);
-    });
+campoSenha.setSelectionRange(0, 99999);
+navigator.clipboard.writeText(campoSenha.value)
+  .then(() => {
+    alert("Senha copiada para a área de transferência!");
+  })
 }
